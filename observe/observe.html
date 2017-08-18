@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Observe</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.11/angular.js" integrity="sha256-r1+cTccsZWuMsEacDDz3zmLoa4bJcLUlZk+W21C0Eoo="
+        crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>
+    <script src="js/counterController.js"></script>
+    <script src="js/counterDirective.js"></script>
+    <style>
+        counter {
+            display: block;
+        }
+
+        .counter--food {
+            background: red;
+        }
+
+        .counter--drink {
+            background: blue;
+        }
+    </style>
+</head>
+
+<body ng-app="app">
+    <div class="counter" ng-controller="counterController as counter">
+        <counter name="{{counter.name}}"></counter>
+    </div>
+    <p><strong>Diferencia entre $watch y $observe:</strong></p>
+    <p>$observe() is a method on the Attributes object, and as such, it can only be used to observe/watch the value change of
+        a DOM attribute. It is only used/called inside directives. Use $observe when you need to observe/watch a DOM attribute
+        that contains interpolation (i.e., {{}}'s). E.g., attr1="Name: {{name}}", then in a directive: attrs.$observe('attr1',
+        ...). (If you try scope.$watch(attrs.attr1, ...) it won't work because of the {{}}s -- you'll get undefined.) Use
+        $watch for everything else.</p>
+    <p>$watch() is more complicated. It can observe/watch an "expression", where the expression can be either a function or
+        a string. If the expression is a string, it is $parse'd (i.e., evaluated as an Angular expression) into a function.
+        (It is this function that is called every digest cycle.) The string expression can not contain {{}}'s. $watch is
+        a method on the Scope object, so it can be used/called wherever you have access to a scope object, hence in a controller
+        -- any controller -- one created via ng-view, ng-controller, or a directive controller a linking function in a directive,
+        since this has access to a scope as well Because strings are evaluated as Angular expressions, $watch is often used
+        when you want to observe/watch a model/scope property. E.g., attr1="myModel.some_prop", then in a controller or link
+        function: scope.$watch('myModel.some_prop', ...) or scope.$watch(attrs.attr1, ...) (or scope.$watch(attrs['attr1'],
+        ...)). (If you try attrs.$observe('attr1') you'll get the string myModel.some_prop, which is probably not what you
+        want.)</p>
+
+    <a href="https://stackoverflow.com/questions/14876112/angularjs-difference-between-the-observe-and-watch-methods">explicacion</a>
+</body>
+
+</html>

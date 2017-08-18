@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Observe</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.11/angular.js" integrity="sha256-r1+cTccsZWuMsEacDDz3zmLoa4bJcLUlZk+W21C0Eoo="
+        crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>
+    <script src="js/counterController.js"></script>
+    <script src="js/counterDirective.js"></script>
+    <style>
+        counter {
+            display: block;
+        }
+
+        .counter--food {
+            background: red;
+        }
+
+        .counter--drink {
+            background: blue;
+        }
+    </style>
+</head>
+
+<body ng-app="app">
+    <counter></counter>
+</body>
+
+</html>
