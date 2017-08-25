@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>plugin comunicacion con angular</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.11/angular.js" integrity="sha256-r1+cTccsZWuMsEacDDz3zmLoa4bJcLUlZk+W21C0Eoo="
+        crossorigin="anonymous"></script>    
+    <link rel="stylesheet" href="css/pikaday.css">
+</head>
+
+<body ng-app="app">
+    <div ng-controller="dateController as ctrl">
+        Parent date: {{ ctrl.date | date: 'MMM d, yyyy' }}
+        <date-picker date="ctrl.date"></date-picker>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/pikaday.js"></script>
+    <script src="js/PikadayService.js"></script>
+    <script src="js/dateController.js"></script>
+    <script src="js/datePickerDirective.js"></script>    
+</body>
+
+</html>
