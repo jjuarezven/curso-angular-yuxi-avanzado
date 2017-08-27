@@ -9,11 +9,10 @@
     function watchListController($scope) {
         var vm = this;
 
-        vm.word = '';
-        vm.wordlist = ['1'];
+        vm.wordlist = [];
 
-        vm.evaluateWord = function() {
-            vm.wordlist.push(vm.word);
+        vm.evaluateWord = function(word) {
+            vm.wordlist.push(word);
         }
     }
 })();

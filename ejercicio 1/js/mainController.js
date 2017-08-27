@@ -8,8 +8,6 @@
     function mainController() {
         var vm = this;
         
-        vm.firstCount = 5;
-        vm.secondCount = 10;
-        vm.thirdCount = 15;
+        vm.word = '';
     }
 })();

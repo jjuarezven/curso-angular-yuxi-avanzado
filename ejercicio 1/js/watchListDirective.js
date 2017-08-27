@@ -1,27 +1,23 @@
-(function() {
+(function () {
     'use strict';
 
     angular
         .module('app')
         .directive('watchList', watchList);
-        
+
     function watchList() {
         return {
             restrict: 'E',
-            scope: false,
-            /* bindToController: {
-                wordlist: '='
-            }, */
             template: `
-                <div class="controller">
+                <div>
                 <ul>
-                    <li ng-repeat="word in controller.wordlist">
+                    <li ng-repeat="word in listController.wordlist">
                         {{word}}
                     </li>
                 </ul>
                 </div>
             `,
-            controller: 'watchListController as controller'
+            controller: 'watchListController as listController'
         }
     }
 })();
