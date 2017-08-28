@@ -9,8 +9,9 @@
         return {
             restrict: 'A',
             link: function ($scope, $element, $attrs) {
-                $attrs.$observe('existentindex', function (value) {
-                    if (value !== '-1' && $attrs.index === value) {
+                $attrs.$observe('word', function (value) {
+                    var itemIndex = $scope.$parent.listController.wordlist.indexOf(value);
+                    if (itemIndex !== -1 && itemIndex === Number($attrs.index)) {
                         $attrs.$updateClass('red', 'normal');
                     }
                     else {

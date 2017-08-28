@@ -11,7 +11,7 @@
             template: `
                 <div>
                     <ul id="list">
-                        <li ng-repeat="item in listController.wordlist" duplicated-class existentindex="{{listController.existentIndex}}" index={{$index}}>
+                        <li ng-repeat="item in listController.wordlist" duplicated-class index="{{$index}}" word="{{listController.word}}">
                             {{item}}
                         </li>
                     </ul>

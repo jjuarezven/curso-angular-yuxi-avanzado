@@ -43,11 +43,19 @@
         $scope.$watch(angular.bind(vm, function () {
             return vm.word;
         }), function (newValue, oldValue) {
-            if (newValue === '' || newValue === oldValue) {
+            var itemIndex = vm.wordlist.indexOf(newValue);
+            if (itemIndex !== -1) {                
                 vm.buttonDisabled = true;
+                vm.displayError = true;
+                return;
+            }
+            if (newValue === '') {                
+                vm.buttonDisabled = true;
+                vm.displayError = false;
                 return;
             }
             vm.buttonDisabled = false;
+            vm.displayError = false;
         });
     }
 })();
