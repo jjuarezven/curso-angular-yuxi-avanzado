@@ -10,10 +10,9 @@
             restrict: 'E',
             template: `
                 <div>
-                    <ul>
-                        <li ng-repeat="item in listController.wordlist">
+                    <ul id="list">
+                        <li ng-repeat="item in listController.wordlist" duplicated-class existentindex="{{listController.existentIndex}}" index={{$index}}>
                             {{item}}
-                            <duplicated-class existentindex="{{listController.existentIndex}}" wordlist="{{listController.wordlist}}"></duplicated-class>
                         </li>
                     </ul>
                 </div>

@@ -14,6 +14,7 @@
         vm.counter = 0;
         vm.buttonDisabled = false;
         vm.existentIndex = -1;
+        vm.displayError = false;
 
         vm.evaluateWord = function () {
             if ($scope.allowInsert) {
@@ -21,6 +22,10 @@
                 if (vm.existentIndex === -1) {
                     vm.wordlist.push(vm.word);
                     vm.word = '';
+                    vm.displayError = false;
+                }
+                else {
+                    vm.displayError = true;
                 }
                 vm.buttonDisabled = true;
             }

@@ -7,15 +7,15 @@
 
     function watchList() {
         return {
-            restrict: 'E',
+            restrict: 'A',
             link: function ($scope, $element, $attrs) {
                 $attrs.$observe('existentindex', function (value) {
-                    if (value !== -1) {
-                        
-                        //console.log();
-                        var index = Number(value);
-                        $scope.$parent.listController.wordlist[index].addClass('red');                      
-                    }                    
+                    if (value !== '-1' && $attrs.index === value) {
+                        $attrs.$updateClass('red', 'normal');
+                    }
+                    else {
+                        $attrs.$updateClass('normal', 'red');
+                    }
                 });
             }
         }

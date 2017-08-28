@@ -12,26 +12,40 @@
     <script src="js/watchListController.js"></script>
     <script src="js/watchListDirective.js"></script>
     <script src="js/duplicatedClassDirective.js"></script>
-    
+
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
     <style>
         .red {
-            background-color: red;
+            color: red;
+        }
+
+        .normal {
+            color: black;
+        }
+
+        .counter {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
         }
     </style>
 </head>
 
 <body ng-app="app">
 
+    <div class="counter">
+        <h3>Counter: {{listController.counter}}</h3>
+    </div>
     <div class="col-md-4 col-md-offset-4">
-        {{listController.counter}}
         <div class="form-horizontal">
             <input type="text" id="txtAdd" class="form-control" style="width:280px;max-width:280px;display:inline-block" ng-model="listController.word"/>
-            <button class="btn btn-primary" style="margin-left:-8px;margin-top:-2px;min-height:36px;" ng-click="listController.evaluateWord();" ng-disabled="listController.buttonDisabled">Add</button>
+            <button class="btn btn-primary" style="margin-left:-8px;margin-top:-2px;min-height:36px;" ng-click="listController.evaluateWord();"
+                ng-disabled="listController.buttonDisabled">Add</button>
+            <div id="error" ng-if="listController.displayError" class="red">The text already exists in the list</div>
         </div>
-        <watch-list word="{{listController.word}}"></watch-list>   
-        
+        <watch-list word="{{listController.word}}"></watch-list>
     </div>
 </body>
 
