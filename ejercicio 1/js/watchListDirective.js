@@ -11,9 +11,7 @@
             template: `
                 <div>
                     <ul id="list">
-                        <li ng-repeat="item in listController.wordlist" duplicated-class index="{{$index}}" word="{{listController.word}}">
-                            {{item}}
-                        </li>
+                        <li ng-repeat="item in listController.wordlist" ng-bind="item" duplicated-class index="{{$index}}" word="{{listController.word}}"></li>
                     </ul>
                 </div>
             `,

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ejercicio 2</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.11/angular.js" integrity="sha256-r1+cTccsZWuMsEacDDz3zmLoa4bJcLUlZk+W21C0Eoo="
+        crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>
+    <script src="js/counter.js"></script>
+    <script src="js/counterButton.js"></script>
+    <script src="js/images.js"></script>
+    <style>
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .img-responsive {
+            width: auto;
+            height: 200px;
+        }
+
+        .vertical-align {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body ng-app="app">
+    <counter>
+        <counter-button label="Let's learn how to use the require property">
+        </counter-button>
+    </counter>
+
+    <images header="'My first transclude project'">
+        <img class="img-responsive" src="http://yuxiglobal.com/images/yuxiLogo.png" alt="logoYuxi"></img>
+        <p>This is example 1</p>
+    </images>
+    <images header="'Another image'">
+        <img class="img-responsive" src="http://yuxiglobal.com/pages/img/boss.png" alt="boss"></img>
+        <p>This is example 2</p>
+    </images>
+    <images header="'No Image'">
+        <p>A default image will be displayed</p>
+    </images>
+</body>
+
+</html>
