@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ejercicio 3</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.11/angular.js" integrity="sha256-r1+cTccsZWuMsEacDDz3zmLoa4bJcLUlZk+W21C0Eoo="
+        crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>
+    <script src="js/mainComponent.js"></script>
+    <script src="js/formComponent.js"></script>    
+    <script src="js/elementComponent.js"></script>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+        
+        .agenda .agenda-date { width: 170px; }
+        .agenda .agenda-date .dayofmonth {
+          width: 40px;
+          font-size: 36px;
+          line-height: 36px;
+          float: left;
+          text-align: right;
+          margin-right: 10px; 
+        }
+        .agenda .agenda-date .shortdate {
+          font-size: 0.75em; 
+        }
+    </style>
+</head>
+
+<body ng-app="app">
+    <maincomponent></maincomponent>
+</body>
+
+</html>
