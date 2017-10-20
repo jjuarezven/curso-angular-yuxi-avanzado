@@ -5,8 +5,12 @@ function ageButton($filter) {
 
         var range = $filter('filter')(ageArray, {active: true}, true)[0];
         range = range.range.split('-');
-        var initial = range[0];
-        var final = range[1];
+        var initial = Number(range[0]);
+        var final = Number(range[1]);
+
+        return collection.filter(function (value) {
+            return value.age >= initial && value.age <= final;
+        });
     };
 }
 

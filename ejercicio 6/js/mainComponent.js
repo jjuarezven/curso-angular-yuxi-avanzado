@@ -44,14 +44,16 @@ var maincomponent = {
 			</div>
     	</div>
 	`,
-	controller: function () {
+	controller: function ($filter) {
 		var ctrl = this;
 		ctrl.people = [
-			{ fullName: 'Pedro Perez', gender: 'M', age: 21 },
-			{ fullName: 'Ana Perez', gender: 'F', age: 17 },
-			{ fullName: 'Robert Perez', gender: 'M', age: 54 },
-			{ fullName: 'Luisa Perez', gender: 'F', age: 30 },
-			{ fullName: 'Antonia Perez', gender: 'F', age: 17 }
+			{ fullName: 'Pedro Ruiz', gender: 'M', age: 21 },
+			{ fullName: 'Ana Salazr', gender: 'F', age: 17 },
+			{ fullName: 'Robert Rodriguez', gender: 'M', age: 54 },
+			{ fullName: 'Luisa Gutierrez', gender: 'F', age: 30 },
+			{ fullName: 'Antonia Solorzano', gender: 'F', age: 17 },
+			{ fullName: 'Freddy Navas', gender: 'F', age: 5 },
+			{ fullName: 'Maria Rincon', gender: 'F', age: 42 }
 		];
 
 		ctrl.currentGender = 'ALL';
@@ -86,8 +88,9 @@ var maincomponent = {
 						ctrl.ageArray[0].active = true;	
 					}
 					else {
-						ctrl.ageArray[i + 1].active = true;	
+						ctrl.ageArray[i + 1].active = true;
 					}
+					ctrl.currentAge = ($filter('filter')(ctrl.ageArray, {active: true}, true)[0]).range;
 					break;
 				}
 			}
