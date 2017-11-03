@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>hooks</title>
+    <link rel="stylesheet" href="app.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.11/angular.js" integrity="sha256-r1+cTccsZWuMsEacDDz3zmLoa4bJcLUlZk+W21C0Eoo="
+        crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>
+    <script src="js/angular-ui-router.js"></script>
+    <script src="js/components/home/home.js"></script>
+    <script src="js/components/home/home.component.js"></script>
+    <script src="js/components/about/about.js"></script>
+    <script src="js/components/about/about.component.js"></script>
+    <script src="js/components/contact/contact.js"></script>
+    <script src="js/components/contact/contact.component.js"></script>
+    <script src="js/components/contact/email/contact-email.component.js"></script>
+    <script src="js/components/contact/post/contact-post.component.js"></script>
+    <script src="js/components/contact/methods/contact-methods.component.js"></script>
+    <script src="js/components/contact/phone/contact-phone.component.js"></script>
+    <script src="js/components/repos/repos.js"></script>
+    <script src="js/components/repos/repos.component.js"></script>
+    <script src="js/components/repos/repos.service.js"></script>
+</head>
+
+<body ng-app="app">
+    <div class="main">
+        <header class="header">
+            <ul class="header__labels">
+                <li>
+                    <a ui-sref="home" ui-sref-active="active">Home</a>
+                </li>
+                <li>
+                    <a ui-sref="about" ui-sref-active="active">About</a>
+                </li>
+                <li>
+                    <a ui-sref="contact" ui-sref-active="active">Contact</a>
+                </li>
+                <li>
+                    <a ui-sref="repos" ui-sref-active="active">Git hub repos</a>
+                </li>
+            </ul>
+        </header>
+        <div class="content" ui-view></div>
+    </div>
+</body>
+
+</html>

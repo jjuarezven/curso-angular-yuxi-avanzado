@@ -1,6 +1,6 @@
 var contactPhone = {
   template: `
-        <div>Componente 1</div>
+        <div>Contact via phone: +584125749932</div>
     `
 };
 
