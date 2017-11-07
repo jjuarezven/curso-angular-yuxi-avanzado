@@ -1,6 +1,11 @@
 var home = {
 	template: `
-		<div class="home">Home Page</div>
+	<div class="contact">
+	<div class="contact-methods">
+		<div ui-view="methods"></div>
+	</div>
+	<div class="contact-details" ui-view="details"></div>
+</div>
 	`
 };
 
@@ -11,7 +16,14 @@ angular
 		$stateProvider
 			.state('home', {
 				url: '/',
-				component: 'home'
+				views: {
+					'@': {
+						component: 'home'
+					},
+					'methods@home': {
+						component: 'homeMethods'
+					}
+				}
 			});
 		$urlRouterProvider.otherwise('/');
 	});
