@@ -1,7 +1,7 @@
 var repos = {
-    bindings: {
-		list: '<'
-	},
+  bindings: {
+    list: "<"
+  },
   template: `
   <div class="repos">
     My Repos:
@@ -23,8 +23,17 @@ var repos = {
       </li>
     </ul>
   </div>
-`,
-    /* ,controller: function(ReposService) {
+`
+,controller: function($state) {
+    var ctrl = this;
+    ctrl.submitForm = function () {
+      $state.go('repos', {
+        username: ctrl.name
+      });
+    }
+
+  }
+  /* ,controller: function(ReposService) {
     var ctrl = this;
     ctrl.list = [];
     ReposService.getRepos().then(function(response) {
@@ -38,12 +47,20 @@ angular
   .component("repos", repos)
   .config(function($stateProvider) {
     $stateProvider.state("repos", {
-      url: "/repos/:username",
-      component: "repos"
+      /* url: "/repos/:username", */
+      url: "/repos/?username",      
+      component: "repos",
+      params: {
+        username: null
+      },
       // esta parte funciona como bindings en el componente, es por eso que tenemos acceso a la lista y podemos borrar el controller del componente
-     , resolve: {
-        list: function(ReposService) {
-          return ReposService.getRepos();
+      resolve: {
+        list: function(ReposService, $transition$) {
+          var params = $transition$.params().username;
+          if (!params) {
+            return;
+          }
+          return ReposService.getRepos(params);
         }
       }
     });
