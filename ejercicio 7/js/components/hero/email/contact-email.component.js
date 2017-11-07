@@ -1,4 +1,4 @@
-var contactEmail = {
+var heroEmail = {
   template: `
   <div>
     <ul>
@@ -35,14 +35,14 @@ var contactEmail = {
 };
 
 angular
-  .module("contact")
-  .component("contactEmail", contactEmail)
+  .module("hero")
+  .component("heroEmail", heroEmail)
   .config(function($stateProvider) {
-    $stateProvider.state("contact.email", {
+    $stateProvider.state("hero.email", {
       url: "/email",
       views: {
-        "details@contact": {
-          component: "contactEmail"
+        "details@hero": {
+          component: "heroEmail"
         }
       }
     });

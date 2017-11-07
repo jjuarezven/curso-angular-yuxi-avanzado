@@ -1,19 +1,19 @@
-var contactPhone = {
+var heroPhone = {
   template: `
         <div>Componente 1</div>
     `
 };
 
 angular
-  .module("contact")
-  .component("contactPhone", contactPhone)
+  .module("hero")
+  .component("heroPhone", heroPhone)
   .config(function($stateProvider) {
-    $stateProvider.state("contact.phone", {
+    $stateProvider.state("hero.phone", {
       url: "^/phone",
-      component: "contactPhone",
+      component: "heroPhone",
       views: {
-        "details@contact": {
-          component: "contactPhone"
+        "details@hero": {
+          component: "heroPhone"
         }
       }
     });

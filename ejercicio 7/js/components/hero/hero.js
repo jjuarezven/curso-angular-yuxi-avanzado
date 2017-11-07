@@ -1,4 +1,4 @@
 angular
-	.module('contact', [
+	.module('hero', [
 		'ui.router'
 	]);

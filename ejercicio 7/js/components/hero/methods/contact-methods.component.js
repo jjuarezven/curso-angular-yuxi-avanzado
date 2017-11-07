@@ -1,12 +1,12 @@
-var contactMethods = {
+var heroMethods = {
 	template: `
 		<div>
 			<ul>
 				<li ui-sref-active="active">
-					<a ui-sref="contact.phone">Componente 1</a>
+					<a ui-sref="hero.phone">Componente 1</a>
 				</li>
 				<li ui-sref-active="active">
-					<a ui-sref="contact.email">Componente 2</a>
+					<a ui-sref="hero.email">Componente 2</a>
 				</li>
 			</ul>
 		</div>
@@ -14,5 +14,5 @@ var contactMethods = {
 };
 
 angular
-	.module('contact')
-	.component('contactMethods', contactMethods);
+	.module('hero')
+	.component('heroMethods', heroMethods);

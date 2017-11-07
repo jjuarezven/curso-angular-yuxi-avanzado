@@ -1,4 +1,4 @@
-var contactPost = {
+var heroPost = {
 	template: `
 		<div>
 			Contact by post:
@@ -12,15 +12,15 @@ var contactPost = {
 };
 
 angular
-	.module('contact')
-	.component('contactPost', contactPost)
+	.module('hero')
+	.component('heroPost', heroPost)
 	.config(function ($stateProvider) {
 		$stateProvider
-			.state('contact.post', {
+			.state('hero.post', {
 				url: '/post',
 				views: {
 					'details@contact': {
-						component: 'contactPost'
+						component: 'heroPost'
 					}
 				}
 			});

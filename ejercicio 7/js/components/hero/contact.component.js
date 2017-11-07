@@ -1,4 +1,4 @@
-var contact = {
+var hero = {
 	template: `
 		<div class="contact">
 			<div class="contact-methods">
@@ -10,18 +10,18 @@ var contact = {
 };
 
 angular
-	.module('contact')
-	.component('contact', contact)
+	.module('hero')
+	.component('hero', hero)
 	.config(function ($stateProvider) {
 		$stateProvider
-			.state('contact', {
-				url: '/contact',
+			.state('hero', {
+				url: '/hero',
 				views: {
 					'@': {
-						component: 'contact'
+						component: 'hero'
 					},
-					'methods@contact': {
-						component: 'contactMethods'
+					'methods@hero': {
+						component: 'heroMethods'
 					}
 				}
 			});
