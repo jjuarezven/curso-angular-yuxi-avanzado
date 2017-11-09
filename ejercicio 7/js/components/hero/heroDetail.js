@@ -31,24 +31,12 @@ angular
         itemName: null
       },
       resolve: {
-        hero: function($transition$) {
+        hero: function($transition$, HEROES_JSON) {
           var name = $transition$.params().itemName;
           if (!name) {
             return;
-          }
-          var heroes = [
-            { company: "images/dc logo.jpg", name: "Superman", info: "abc123" },
-            { company: "images/dc logo.jpg", name: "Batman", info: "abc123" },
-            { company: "images/marvel logo.png", name: "Thor", info: "abc123" },
-            {
-              company: "images/marvel logo.png",
-              name: "The Thing",
-              info: "abc123"
-            },
-            { company: "images/dc logo.jpg", name: "Flash", info: "abc123" },
-            { company: "images/marvel logo.png", name: "Hulk", info: "abc123" }
-          ];
-          return heroes.filter(function(item) {
+          }          
+          return HEROES_JSON.filter(function(item) {
             return item.name === name;
           })[0];
         }

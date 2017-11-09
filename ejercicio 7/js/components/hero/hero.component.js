@@ -1,10 +1,9 @@
 	var hero = {
 		template: `
 		<div class="contact contact-methods contact-details">
-		<div class="form-group">
-		
-		<input class="form-control input-sm" id="inputsm" type="text" placeholder="Search" ng-model="$ctrl.query">
-	  </div>
+			<div class="form-group">		
+				<input class="form-control input-sm" type="text" placeholder="Search" ng-model="$ctrl.query">
+	  		</div>
 			<ul>
 				<li ng-repeat="hero in $ctrl.heroes | filter: $ctrl.query | orderBy: 'name' ">
 					<div class="col-xs-18 col-sm-6 col-md-3">
@@ -22,16 +21,9 @@
 			</ul>
 		</div>
 		  `,
-		controller: function($state) {
+		controller: function($state, HEROES_JSON) {
 		  var vm = this;
-		  vm.heroes = [
-			{ company: "images/dc logo.jpg", name: "Superman", info: "abc123" },
-			{ company: "images/dc logo.jpg", name: "Batman", info: "abc123" },
-			{ company: "images/marvel logo.png", name: "Thor", info: "abc123" },
-			{ company: "images/marvel logo.png", name: "The Thing", info: "abc123" },
-			{ company: "images/dc logo.jpg", name: "Flash", info: "abc123" },
-			{ company: "images/marvel logo.png", name: "Hulk", info: "abc123" }
-		  ];
+		  vm.heroes = HEROES_JSON;
 		  vm.showDetail = function (name) {
 			$state.go('heroDetail', {
 				itemName: name
