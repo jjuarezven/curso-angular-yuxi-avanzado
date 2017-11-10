@@ -17,6 +17,9 @@ var heroDetail = {
       `,
   controller: function() {
     var ctrl = this;
+    ctrl.uiCanExit = function() {
+      return window.confirm("Are you sure you want to leave?");
+    };
   }
 };
 
@@ -35,7 +38,7 @@ angular
           var name = $transition$.params().itemName;
           if (!name) {
             return;
-          }          
+          }
           return HEROES_JSON.filter(function(item) {
             return item.name === name;
           })[0];
