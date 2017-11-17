@@ -1,0 +1,29 @@
+{
+	"type": "Collection",
+	"properties": {
+		"FistName": {
+			"name": "FistName",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "FistName",
+			"order": 0
+		},
+		"LastName": {
+			"name": "LastName",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "LastName",
+			"order": 1
+		},
+		"Email": {
+			"name": "Email",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "Email",
+			"order": 2
+		}
+	}
+}
