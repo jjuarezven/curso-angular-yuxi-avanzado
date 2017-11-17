@@ -1,0 +1,33 @@
+<button class="btn btn-info" type="button" ng-click="$ctrl.redirectAsignature()">Add Asignature</button>
+<br>
+<div class="card">
+    <div class="card-header">
+        Asignatures
+    </div>
+    <div class="card-block">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Description</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="asignature in $ctrl.asignatures">
+                    <td class="text-center">{{asignature.name}}</td>
+                    <td class="text-center">{{asignature.description}}</td>
+                    <td>
+                        <div style="margin-left:20%">
+                            <button class="btn btn-info" type="button" ng-click="$ctrl.redirectAsignature(asignature)">
+                                Update
+                            </button>
+                            <button style="margin-left:5px" class="btn btn-success" type="button" ng-click="$ctrl.addStudents(asignature)">Add / Remove Students</button>
+                            <button style="margin-left:5px" class="btn btn-danger" type="button" ng-click="$ctrl.deleteAsignature(asignature)">Delete</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
